@@ -20,8 +20,6 @@
         ;
 };
 
-/ {
-    vtrackball: virtual_input_trackball {
-        compatible = "zmk,virtual-input";
-    };
+&trackball_split {
+	status = "disabled";
 };

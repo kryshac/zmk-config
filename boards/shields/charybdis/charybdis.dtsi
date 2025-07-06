@@ -1,4 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <physical_layouts.dtsi>
 
 / {
     chosen {
@@ -21,5 +22,15 @@
 
     kscan0: kscan {
         diode-direction = "row2col";
+    };
+
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+    
+        trackball_split: trackball_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
     };
 };

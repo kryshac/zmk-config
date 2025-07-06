@@ -1,5 +1,6 @@
 #include "charybdis.dtsi"
 #include "charybdis_3610.dtsi"
+#include <dt-bindings/zmk/input_transform.h>
 
 &default_transform {
     col-offset = <5>;
@@ -32,14 +33,6 @@
     status = "okay";
 };
 
-/ {
-    vtrackball: virtual_input_trackball {
-        compatible = "zmk,virtual-input";
-    };
-
-    input_relay_config_trackball {
-        compatible = "zmk,split-peripheral-input-relay";
-        device = <&trackball>;
-        relay-channel = <102>;
-    };
+&trackball_split {
+    device = <&trackball>;
 };
